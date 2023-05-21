@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Thêm link bootstrap -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  </head>
+  <body>
+    <div class="container">
+      <h2>Form</h2>
+      <form action="#" th:action="@{/staff/save}" th:object="${staff}" method="post">
+        <!-- Thêm class form-group để tạo khoảng cách giữa các input -->
+        <div class="form-group">
+          <input type="text" th:field="*{id}" class="form-control" name="id" placeholder="Id">
+        </div>
+        <div class="form-group">
+          <input type="text" th:field="*{fullname}" class="form-control" name="name" placeholder="Họ tên">
+        </div>
+        <div class="form-group">
+          <input type="email" th:field="*{email}" class="form-control" name="email" placeholder="Địa chỉ email">
+        </div>
+        <div class="form-group">
+          <input type="number" th:field="*{salary}" class="form-control" name="salary" placeholder="Mức lương">
+        </div>
+        <!-- Thêm class form-check để tạo khoảng cách giữa các radio -->
+        <div class="form-check">
+          <input name="gender" th:field="*{gender}" type="radio" class="form-check-input" value="true">Nam
+        </div>
+        <div class="form-check">
+          <input name="gender" th:field="*{gender}" type="radio" class="form-check-input" value="false">Nữ
+        </div>
+
+        <!-- Thêm class custom-select để tạo style cho select -->
+        <div class="form-group">
+          <select name="job-position" th:field="*{position}" class="custom-select">
+            <option value="0" selected>Chọn vị trí công việc</option>
+            <option value="CEO">Chief Executive Officer</option>
+            <option value="DIR">Director</option>
+            <option value="MAN">Manager</option>
+            <option value="EMP">Employee</option>
+          </select>
+        </div>
+        <button type="submit" class="btn btn-primary">Lưu</button>
+      </form>
+    </div>  
+  </body>
+</html>
