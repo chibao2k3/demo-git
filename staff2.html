@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <!-- Thêm link bootstrap -->
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+      </head>
+      <body>
+        <div class="container">
+          <h2>Form</h2>
+          <form action="#" th:action="@{/staff2/save}" th:object="${staff2}" method="post">
+            <!-- Thêm class form-check để tạo khoảng cách giữa các radio -->
+            <div class="form-check">
+              <input name="gender" th:field="*{gender}" type="radio" class="form-check-input" value="true">Nam
+            </div>
+            <div class="form-check">
+              <input name="gender" th:field="*{gender}" type="radio" class="form-check-input" value="false">Nữ
+            </div>
+    
+            <!-- Thêm class custom-select để tạo style cho select -->
+            <div class="form-group">
+              <select name="job-position" th:field="*{position}" class="custom-select">
+                <option value="0" selected>Chọn vị trí công việc</option>
+              </select>
+            </div>
+            <button type="submit" class="btn btn-primary">Lưu</button>
+          </form>
+        </div>  
+      </body>
+</html>
